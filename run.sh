@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker run -it sfosbid:latest
+docker run --interactive --tty --volume $(pwd)/projects:/home/nemo/projects sfosbid:latest

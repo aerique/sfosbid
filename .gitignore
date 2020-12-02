@@ -1,3 +1,4 @@
 .gitignore
 downloads/*.tar.7z
 downloads/*.tar.bz2
+projects/*

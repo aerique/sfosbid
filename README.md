@@ -15,7 +15,7 @@ monitored for support.)
 
 - [X] use `curl` instead of `wget`
 - [X] optimize RPM-to-phone workflow
-- [ ] mount an external `projects` directory and add it to `.gitignore`?
+- [X] mount an external `projects` directory and add it to `.gitignore`?
 - [ ] make getting specific versions of rootfs, tooling and targets easier
 
 ## Introduction
@@ -121,10 +121,16 @@ One can save the current EQL5 state with `docker commit <<container-id>>
 
 ## `deploy-rpm-to-phone.sh`
 
+You can use this script to avoid most of the manual steps described in
+"Testing". Run the script without any arguments to see its usage.
+
 It's best to have another terminal open with an open SSH connection to
-the phone and the have do a plain `devel-su` in the directory where the
-RPM is copied to. Have a `pkcon -y install-local RPM` command ready so
-you can just get it from your commandline history and press Enter.
+the phone and then do a plain `devel-su` in the directory where the RPM
+is copied to. Have a `pkcon -y install-local RPM` command ready so you
+can just get it from your commandline history and press Enter.
+
+The holy gradle would be to have the `pkcon install-local` step
+automated as well.
 
 ### SSH Public Key Authentication
 
