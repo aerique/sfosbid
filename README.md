@@ -117,5 +117,5 @@ $ mb2 -t SailfishOS-latest-armv7hl build
 If the `qmake` and `make` are not done above, the `mb2 build` errors
 out.
 
-One can save the current EQL5 state with `docker commit <<hash>>
+One can save the current EQL5 state with `docker commit <<container-id>>
 <<tag>>` from another shell.
