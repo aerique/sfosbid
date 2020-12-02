@@ -1,4 +1,4 @@
-# SailfishOS Build in Docker
+# SailfishOS Builds in Docker
 
 The canonical home page of this library is https://git.sr.ht/~aerique/sfosbid
 
@@ -14,9 +14,9 @@ monitored for support.)
 ## To Do
 
 - [ ] use `curl` instead of `wget`
-- [ ] optimize RPM-to-phone workflow
-- [ ] make getting specific versions of rootfs, tooling and targets
-      easier
+- [X] optimize RPM-to-phone workflow
+- [ ] mount an external `projects` directory and add it to `.gitignore`?
+- [ ] make getting specific versions of rootfs, tooling and targets easier
 
 ## Introduction
 
@@ -90,9 +90,8 @@ shell (so **not** in the Docker container):
     - `devel-su pkcon install-local cppqml-1.0-1.armv7hl.rpm` (execute
       this on your phone)
 
-You should now have `cppqml-sample` in your app grid. It can be deleted
-through the phone UI (same as how you remove other apps) or with
-`pkcon`.
+You should now have `cppqml` in your app grid. It can be deleted through
+the phone UI (same as how you remove other apps) or with `pkcon`.
 
 ## `eql5-sfos`
 
@@ -119,3 +118,14 @@ out.
 
 One can save the current EQL5 state with `docker commit <<container-id>>
 <<tag>>` from another shell.
+
+## `deploy-rpm-to-phone.sh`
+
+It's best to have another terminal open with an open SSH connection to
+the phone and the have do a plain `devel-su` in the directory where the
+RPM is copied to. Have a `pkcon -y install-local RPM` command ready so
+you can just get it from your commandline history and press Enter.
+
+### SSH Public Key Authentication
+
+Please see: https://www.ssh.com/ssh/public-key-authentication/
