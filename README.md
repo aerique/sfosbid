@@ -1,6 +1,6 @@
 # SailfishOS Builds in Docker
 
-The canonical home page of this library is https://git.sr.ht/~aerique/sfosbid
+The canonical home page of this project is https://git.sr.ht/~aerique/sfosbid
 
 (The library is also pushed to GitLab and GitHub but those sites are not
 monitored for support.)
@@ -13,7 +13,7 @@ monitored for support.)
 
 ## To Do
 
-- [ ] use `curl` instead of `wget`
+- [X] use `curl` instead of `wget`
 - [X] optimize RPM-to-phone workflow
 - [ ] mount an external `projects` directory and add it to `.gitignore`?
 - [ ] make getting specific versions of rootfs, tooling and targets easier
