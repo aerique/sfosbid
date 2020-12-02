@@ -70,25 +70,24 @@ and then build the Docker image using `./build.sh`.
 
 Start a Docker container from the build image with `./run.sh`, then:
 
-```
-[nemo@<<container-id>> ~]$ git clone https://github.com/sailfishos/cppqml-sample
-[nemo@<<container-id>> ~]$ cd cppqml-sample/
-[nemo@<<container-id>> cppqml-sample]$ mb2 -t SailfishOS-latest-armv7hl build
-```
+- `git clone https://github.com/sailfishos/cppqml-sample`
+- `cd cppqml-sample`
+- `mb2 -t SailfishOS-latest-armv7hl build`
 
 If successful you will have an RPM inside the `RPMS` directory of the
 project. **Do not exit the Docker container but open a new shell.** To
 copy this RPM to your phone do the following on the host in the new
 shell (so **not** in the Docker container):
 
-- `docker cp <<container-id>>:/home/nemo/cppqml-sample/RPMS/cppqml-1.0-1.armv7hl.rpm .` (the exact name of the RPM can differ)
+- `docker cp <<container-id>>:/home/nemo/cppqml-sample/RPMS/cppqml-1.0-1.armv7hl.rpm .`
+    - the exact name of the RPM can differ
     - the container ID is shown in the shell prompt when inside the
       container or can be obtained using `docker ps`
-- `scp cppqml-1.0-1.armv7hl.rpm nemo@192.168.2.15:` (use whatever IP
-  your phone is reachable on)
+- `scp cppqml-1.0-1.armv7hl.rpm nemo@192.168.2.15:`
+    - use whatever username and IP your phone is reachable on
 - `ssh nemo@192.168.2.15`
-    - `devel-su pkcon install-local cppqml-1.0-1.armv7hl.rpm` (execute
-      this on your phone)
+- `devel-su pkcon install-local cppqml-1.0-1.armv7hl.rpm`
+    - on your phone obviously
 
 You should now have `cppqml` in your app grid. It can be deleted through
 the phone UI (same as how you remove other apps) or with `pkcon`.
