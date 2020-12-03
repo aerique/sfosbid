@@ -7,8 +7,8 @@ RUN echo "nemo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Appending to the existing file would be nicer, but would also end up after
 # having sourced the global profile.
-COPY dot-bashrc-root /root/.bashrc
-COPY dot-bashrc-nemo /home/nemo/.bashrc
+COPY config/dot-bashrc-root /root/.bashrc
+COPY config/dot-bashrc-nemo /home/nemo/.bashrc
 
 COPY downloads/Sailfish_OS-latest-Sailfish_SDK_Tooling-i486.tar.7z /
 COPY downloads/Sailfish_OS-latest-Sailfish_SDK_Target-i486.tar.7z /
