@@ -118,6 +118,16 @@ out.
 One can save the current EQL5 state with `docker commit <<container-id>>
 <<tag>>` from another shell.
 
+### Tips
+
+- run `make` again (inside `sdk-build`) after updating dependencies or
+  changing the Lisp source that you want to be static
+- also always load a Lisp file at the start for dynamic behavior that
+  isn't set in stone yet (or use Slime / Sly)
+- make a snapshot after Quicklisp took a while to load all deps so you
+  will not have to wait on that again next time
+- don't forget to remove the webserver before publishing an app
+
 ## `deploy-rpm-to-phone.sh`
 
 You can use this script to avoid most of the manual steps described in
