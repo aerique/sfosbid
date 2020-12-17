@@ -122,24 +122,13 @@ One can save the current EQL5 state with `docker commit <<container-id>>
 
 - run `make` again (inside `sdk-build`) after updating dependencies or
   changing the Lisp source that you want to be static
+  - basically, if the `mb2 ...` step above fails, try running `make`
+    again
 - also always load a Lisp file at the start for dynamic behavior that
   isn't set in stone yet (or use Slime / Sly)
 - make a snapshot after Quicklisp took a while to load all deps so you
   will not have to wait on that again next time
 - don't forget to remove the webserver before publishing an app
-
-## `deploy-rpm-to-phone.sh`
-
-You can use this script to avoid most of the manual steps described in
-"Testing". Run the script without any arguments to see its usage.
-
-It's best to have another terminal open with an open SSH connection to
-the phone and then do a plain `devel-su` in the directory where the RPM
-is copied to. Have a `pkcon -y install-local RPM` command ready so you
-can just get it from your commandline history and press Enter.
-
-The holy gradle would be to have the `pkcon install-local` step
-automated as well.
 
 ### SSH Public Key Authentication
 
