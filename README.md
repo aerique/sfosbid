@@ -120,10 +120,16 @@ One can save the current EQL5 state with `docker commit <<container-id>>
 
 ### Tips
 
+- `build.sh -u`, `run.sh -u` and `snapshot-run.sh -u` use the current
+  user's UID and GID instead of the user "nemo", so that files in
+  mounted volumes can be used without the hassle of permissions (but the
+  `-u` versions need to be used together!)
 - run `make` again (inside `sdk-build`) after updating dependencies or
   changing the Lisp source that you want to be static
   - basically, if the `mb2 ...` step above fails, try running `make`
     again
+- issue a `make clean` in your project root after ECL and EQL have been
+  updated
 - also always load a Lisp file at the start for dynamic behavior that
   isn't set in stone yet (or use Slime / Sly)
 - make a snapshot after Quicklisp took a while to load all deps so you
