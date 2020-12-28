@@ -15,6 +15,7 @@ RUN echo "$BUILD_USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 # having sourced the global profile.
 COPY config/dot-bashrc-root /root/.bashrc
 COPY config/dot-bashrc-nemo /home/$BUILD_USER/.bashrc
+RUN chown $BUILD_USER.$BUILD_USER /home/$BUILD_USER/.bashrc
 
 COPY downloads/Sailfish_OS-latest-Sailfish_SDK_Tooling-i486.tar.7z /
 COPY downloads/Sailfish_OS-latest-Sailfish_SDK_Target-i486.tar.7z /
