@@ -1,4 +1,4 @@
-# SailfishOS Builds in Docker
+# Sailfish OS Builds in Docker
 
 The canonical home page of this project is https://git.sr.ht/~aerique/sfosbid
 
@@ -20,7 +20,7 @@ monitored for support.)
 
 ## Introduction
 
-So here's yet another build environment for SailfishOS in Docker. Why?
+So here's yet another build environment for Sailfish OS in Docker. Why?
 
 Basically the others were either too dangerous or too complicated for me
 or I just could not use them.
@@ -33,7 +33,7 @@ better suited for you:
 - https://github.com/evilJazz/sailfishos-buildengine
 - https://github.com/CODeRUS/docker-sailfishos-buildengine
 
-"Sailfish Builds in Docker" is inspired on SfietKonstantin's work. I
+"Sailfish OS Builds in Docker" is inspired on SfietKonstantin's work. I
 initially used his version but after I was not careful and blew my
 `/dev` away I decided to roll my own after looking at the source of the
 alternatives. I felt the `Dockerfile` and helper scripts could be much
@@ -43,7 +43,7 @@ vranki's version came the closest to what I was looking for but I only
 found it after I was almost finished.
 
 evilJazz's and CODeRUS's implementations look the most mature but they
-require one to install the SDK and a lot of handywork. They will
+require one to install the SDK and to do a lot of handywork. They will
 probably work better for more serious and bigger projects but I cannot
 install the SDK because it depends on a very old version of OpenSSL
 which I'm not prepared to install (and then forget to remove
@@ -52,7 +52,7 @@ of running the package manager since it only comes with LibreSSL.
 
 ## Goal
 
-An environment for building SailfishOS projects in Docker, initially
+An environment for building Sailfish OS projects in Docker, initially
 specifically [eql5-sfos](https://redmine.casenave.fr/projects/eql5-sfos/)
 and work from there.
 
